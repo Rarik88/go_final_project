@@ -16,7 +16,7 @@ func (h *Handler) Task(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(200, task)
+	c.JSON(http.StatusOK, task)
 }
 
 func (h *Handler) AddTask(c *gin.Context) {
@@ -35,7 +35,7 @@ func (h *Handler) AddTask(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(200, gin.H{"id": id})
+	c.JSON(http.StatusOK, gin.H{"id": id})
 }
 
 func (h *Handler) Tasks(c *gin.Context) {
@@ -44,7 +44,7 @@ func (h *Handler) Tasks(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(200, list)
+	c.JSON(http.StatusOK, list)
 }
 
 func (h *Handler) UpdateTask(c *gin.Context) {
@@ -72,7 +72,7 @@ func (h *Handler) UpdateTask(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(200, gin.H{})
+	c.JSON(http.StatusOK, gin.H{})
 }
 
 func (h *Handler) TaskDone(c *gin.Context) {
@@ -85,7 +85,7 @@ func (h *Handler) TaskDone(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(200, gin.H{})
+	c.JSON(http.StatusOK, gin.H{})
 }
 
 func (h *Handler) TaskDelete(c *gin.Context) {
@@ -95,5 +95,5 @@ func (h *Handler) TaskDelete(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	c.JSON(200, gin.H{})
+	c.JSON(http.StatusOK, gin.H{})
 }

@@ -1,23 +1,24 @@
 package handler
 
 import (
-	"github.com/gin-gonic/gin"
 	"github/Rarik88/go_final_project/pkg/api"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Handler struct {
-	api *api.Api
+	api *api.Service
 }
 
-func NewHandler(api *api.Api) *Handler {
+func NewHandler(api *api.Service) *Handler {
 	return &Handler{api: api}
 }
 
 func (h *Handler) Init() *gin.Engine {
 	r := gin.Default()
 
-	r.GET("/api/nextdate", h.ND)
+	r.GET("/api/nextdate", h.NextD)
 
 	api := r.Group("/api")
 	{

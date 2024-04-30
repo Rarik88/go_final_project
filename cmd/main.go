@@ -2,10 +2,10 @@ package main
 
 import (
 	app "github/Rarik88/go_final_project"
+	api "github/Rarik88/go_final_project/pkg/api"
 	con "github/Rarik88/go_final_project/pkg/const"
 	hl "github/Rarik88/go_final_project/pkg/handler"
 	"github/Rarik88/go_final_project/pkg/hub"
-	api "github/Rarik88/go_final_project/pkg/service"
 	"log"
 
 	_ "github.com/mattn/go-sqlite3"

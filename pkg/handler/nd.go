@@ -1,13 +1,14 @@
 package handler
 
 import (
-	"github.com/gin-gonic/gin"
 	nextDate "github/Rarik88/go_final_project/pkg/data"
 	"github/Rarik88/go_final_project/pkg/model"
 	"log"
+
+	"github.com/gin-gonic/gin"
 )
 
-func (h *Handler) ND(c *gin.Context) {
+func (h *Handler) NextD(c *gin.Context) {
 	var nd model.NextDate
 
 	err := c.ShouldBindQuery(&nd)

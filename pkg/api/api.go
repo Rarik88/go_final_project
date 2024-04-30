@@ -14,12 +14,12 @@ type Task interface {
 	TaskDelete(id string) error
 }
 
-type Api struct {
+type Service struct {
 	Task
 }
 
-func NewApi(hub hub.Task) *Api {
-	return &Api{
+func NewApi(hub hub.Task) *Service {
+	return &Service{
 		Task: NewApiTask(hub),
 	}
 }
