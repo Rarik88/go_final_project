@@ -1,14 +1,15 @@
 package main
 
 import (
+	"log"
+
+	_ "github.com/mattn/go-sqlite3"
+
 	app "github/Rarik88/go_final_project"
 	api "github/Rarik88/go_final_project/pkg/api"
 	con "github/Rarik88/go_final_project/pkg/const"
 	hl "github/Rarik88/go_final_project/pkg/handler"
 	"github/Rarik88/go_final_project/pkg/hub"
-	"log"
-
-	_ "github.com/mattn/go-sqlite3"
 )
 
 // добавлена обработка ощибок в Дб
