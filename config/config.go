@@ -1,4 +1,4 @@
 package config
 
-var Port = "7540"
-var DBFile = "./db/scheduler.db"
+const Port = "7540"
+const DBFile = "./db/scheduler.db"

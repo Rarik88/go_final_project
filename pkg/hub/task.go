@@ -2,11 +2,13 @@ package hub
 
 import (
 	"fmt"
-	"github.com/sirupsen/logrus"
-	nextDate "github/Rarik88/go_final_project/pkg/data"
-	"github/Rarik88/go_final_project/pkg/model"
 	"regexp"
 	"time"
+
+	"github.com/sirupsen/logrus"
+
+	nextDate "github/Rarik88/go_final_project/pkg/data"
+	"github/Rarik88/go_final_project/pkg/model"
 )
 
 const TaskTable string = "scheduler"

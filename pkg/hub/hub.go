@@ -3,6 +3,7 @@ package hub
 import (
 	"github.com/jmoiron/sqlx"
 	_ "github.com/mattn/go-sqlite3"
+
 	"github/Rarik88/go_final_project/pkg/model"
 )
 

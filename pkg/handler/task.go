@@ -1,11 +1,12 @@
 package handler
 
 import (
-	"github/Rarik88/go_final_project/pkg/model"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
+
+	"github/Rarik88/go_final_project/pkg/model"
 )
 
 func (h *Handler) Task(c *gin.Context) {

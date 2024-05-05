@@ -6,6 +6,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 
 	app "github/Rarik88/go_final_project"
+	"github/Rarik88/go_final_project/config"
 	api "github/Rarik88/go_final_project/pkg/api"
 	con "github/Rarik88/go_final_project/pkg/const"
 	hl "github/Rarik88/go_final_project/pkg/handler"
@@ -28,4 +29,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	//лог запуска порта добавлен
+	log.Printf("Сервер запущен на порту %s", config.Port)
 }

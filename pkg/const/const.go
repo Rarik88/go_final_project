@@ -1,33 +1,28 @@
 package con
 
 import (
-	"github/Rarik88/go_final_project/config"
 	"log"
 	"os"
+
+	"github/Rarik88/go_final_project/config"
 )
 
 // Объявление констант, используемых для настройки веб-сервера и базы данных
 const (
 	// WebDir = "web" // Директория с веб-ресурсами
 	WebDir                                = "D:/World/go_final_project/web"
-	ENV_PORT                              = "TODO_PORT"                                         // Переменная окружения для порта
-	API_NEXTDATE                          = "/api/nextdate"                                     // URL-путь для API
-	API_TASK                              = "/api/task"                                         // URL-путь для API
-	NOW                                   = "now"                                               // Константа для текущего времени
-	DATE_EVENT                            = "date"                                              // Константа для даты
-	REPEAT_EVENT                          = "repeat"                                            // Константа для повторения
-	ENV_DBFILE                            = "TODO_DBFILE"                                       // Переменная окружения для файла базы данных
-	INFO_GETTING_PORT_FROM_ENVIRONMENT    = "Получаем порт из окружения..."                     // Сообщение о получении порта из переменной окружения
-	INFO_GETTING_DB_NAME_FROM_ENVIRONMENT = "Получаем имя БД из окружения..."                   // Сообщение о получении имени базы данных из переменной окружения
-	INFO_USING_DEFAULT_PORT               = "Порт не задан. Будем использовать 7540"            // Сообщение о использовании порта по умолчанию
-	PORT_SET                              = "Порт задан - "                                     // Сообщение о задании порта
-	DB_NAME_SET                           = "./db/scheduler.db"                                 // Сообщение о задании имени базы данных
-	INFO_DB_NAME_NOT_SET_USING_DEFAULT    = "Имя БД не задано. Будем использовать scheduler.db" // Сообщение о использовании имени базы данных по умолчанию
-	SQL_DRIVER                            = "sqlite3"                                           // Драйвер для работы с базой данных SQLite
-	FAILED_TO_OPEN_DATABASE               = "Не удалось открыть БД: "                           // Сообщение об ошибке при открытии базы данных
-	TABLE_CREATION_ERROR                  = "Упс!.. Ошбика при создании таблицы: "              // Сообщение об ошибке при создании таблицы
-	INDEX_CREATION_ERROR                  = "Упс!.. Ошбика при создании индекса: "              // Сообщение об ошибке при создании индекса
-	SQL_CREATE_TABLES                     = "CREATE TABLE IF NOT EXISTS scheduler " +           // SQL-запрос для создания таблицы в базе данных
+	ENV_PORT                              = "TODO_PORT"                               // Переменная окружения для порта
+	API_NEXTDATE                          = "/api/nextdate"                           // URL-путь для API
+	API_TASK                              = "/api/task"                               // URL-путь для API
+	DATE_EVENT                            = "date"                                    // Константа для даты
+	REPEAT_EVENT                          = "repeat"                                  // Константа для повторения
+	INFO_GETTING_PORT_FROM_ENVIRONMENT    = "Получаем порт из окружения..."           // Сообщение о получении порта из переменной окружения
+	INFO_GETTING_DB_NAME_FROM_ENVIRONMENT = "Получаем имя БД из окружения..."         // Сообщение о получении имени базы данных из переменной окружения
+	INFO_USING_DEFAULT_PORT               = "Порт не задан. Будем использовать 7540"  // Сообщение о использовании порта по умолчанию
+	PORT_SET                              = "Порт задан - "                           // Сообщение о задании порта
+	DB_NAME_SET                           = "./db/scheduler.db"                       // Сообщение о задании имени базы данных
+	SQL_DRIVER                            = "sqlite3"                                 // Драйвер для работы с базой данных SQLite
+	SQL_CREATE_TABLES                     = "CREATE TABLE IF NOT EXISTS scheduler " + // SQL-запрос для создания таблицы в базе данных
 		"(id INTEGER PRIMARY KEY AUTOINCREMENT, " + // Определение первичного ключа
 		"date TEXT, " + // Поле для хранения даты
 		"title TEXT, " + // Поле для заголовка задачи

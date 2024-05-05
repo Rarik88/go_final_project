@@ -3,11 +3,12 @@ package nextDate
 import (
 	"errors"
 	"fmt"
-	"github/Rarik88/go_final_project/pkg/model"
 	"log"
 	"strconv"
 	"strings"
 	"time"
+
+	"github/Rarik88/go_final_project/pkg/model"
 )
 
 const Format_yyyymmdd = "20060102"

@@ -1,11 +1,13 @@
 package hub
 
 import (
-	"github.com/jmoiron/sqlx"
-	"github/Rarik88/go_final_project/pkg/const"
 	"log"
 	"os"
 	"path/filepath"
+
+	"github.com/jmoiron/sqlx"
+
+	con "github/Rarik88/go_final_project/pkg/const"
 )
 
 const (
@@ -20,21 +22,22 @@ func NewDB(db *sqlx.DB) *TaskSQLite {
 	return &TaskSQLite{db: db}
 }
 
-func Sqlite(dbname string) *sqlx.DB {
+func Sqlite(dbname string) (*sqlx.DB, error) {
 	dbfile, err := CheckDb(dbname)
 	if err != nil {
-		return nil
+		return nil, err
 	}
 	db, err := sqlx.Open(SqlDriver, dbfile)
 	if err != nil {
-		return nil
+		return nil, err
 	}
-	return db
+	return db, err
 }
 
 func CheckDb(dbName string) (string, error) {
 	appPath, err := os.Executable()
 	if err != nil {
+		return "", err
 	}
 	dbFile := filepath.Join(filepath.Dir(appPath), dbName)
 	_, err = os.Stat(dbFile)
